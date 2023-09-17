@@ -7,7 +7,7 @@ import Services from "./sections/Services";
 import SpecialOffer from "./sections/SpecialOffer";
 import Subscribe from "./sections/Subscribe";
 import SuperQuality from "./sections/SuperQuality";
-
+import NewProducts from "./sections/NewProducts";
 const App = () => {
   return (
     <main className="relative">
@@ -21,12 +21,17 @@ const App = () => {
       <section className="padding">
         <SuperQuality />
       </section>
+      <section className="bg-pale-blue padding">
+      <NewProducts />
+      </section>
+      
       <section className="padding-x py-10">
         <Services />
       </section>
       <section className="padding">
         <SpecialOffer />
       </section>
+     
       <section className="bg-pale-blue padding">
         <CustomerReviews />
       </section>
@@ -36,6 +41,7 @@ const App = () => {
       <section className="bg-black padding-x padding-t pb-8">
         <Footer />
       </section>
+    
     </main>
   );
 };
