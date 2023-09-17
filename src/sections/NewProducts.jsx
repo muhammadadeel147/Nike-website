@@ -2,6 +2,7 @@ import  { useState } from "react";
 import  img  from "../assets/images/big-shoe1.png";
 import  img1  from "../assets/images/big-shoe2.png";
 import  img2  from "../assets/images/big-shoe3.png";
+// import  img3  from "../assets/images/big-shoe4.jpg";
 const ProductPage = () => {
   const categories = ["All", "Shoes", "Sneakers", "Sandals", "Boots"];
 
@@ -9,13 +10,13 @@ const ProductPage = () => {
     { name: "Product 1", price: "$100", category: "Shoes", image: img },
     { name: "Product 1", price: "$100", category: "Shoes", image: img1 },
     { name: "Product 1", price: "$100", category: "Shoes", image: img2 },
-    { name: "Product 2", price: "$120", category: "Shoes", image: "https://via.placeholder.com/150" },
-    { name: "Product 3", price: "$90", category: "Sneakers", image: "https://via.placeholder.com/150" },
-    { name: "Product 4", price: "$80", category: "Sneakers", image: "https://via.placeholder.com/150" },
-    { name: "Product 5", price: "$70", category: "Sandals", image: "https://via.placeholder.com/150" },
-    { name: "Product 6", price: "$110", category: "Sandals", image: "https://via.placeholder.com/150" },
-    { name: "Product 7", price: "$130", category: "Boots", image: "https://via.placeholder.com/150" },
-    { name: "Product 8", price: "$150", category: "Boots", image: "https://via.placeholder.com/150" },
+    { name: "Product 1", price: "$100", category: "Shoes", image: img2 },
+    { name: "Product 3", price: "$90", category: "Sneakers", image: img2 },
+    { name: "Product 4", price: "$80", category: "Sneakers", image: img1 },
+    { name: "Product 5", price: "$70", category: "Sandals", image: img  },
+    { name: "Product 6", price: "$110", category: "Sandals", image: img1 },
+    { name: "Product 7", price: "$130", category: "Boots", image: img },
+    { name: "Product 8", price: "$150", category: "Boots", image: img1},
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
