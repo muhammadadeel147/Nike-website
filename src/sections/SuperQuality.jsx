@@ -1,13 +1,41 @@
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { shoe8 } from "../assets/images";
 import Button from "../components/Button";
+
 const SuperQuality = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("about-us");
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const windowHeight = window.innerHeight;
+        if (window.scrollY + windowHeight > offsetTop) {
+          setAnimate(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section
-      id="about-us "
-      className=" flex justify-between items-center max-lg:flex-col gap-10 w-full max-container"
+      id="about-us"
+      className="flex justify-between items-center max-lg:flex-col gap-10 w-full max-container"
     >
-      <div className="flex flex-1 flex-col">
-        <h2 className=" font-palanquin text-4xl capitalize font-bold lg:max-w-lg">
+      <motion.div
+        className="flex flex-1 flex-col"
+        initial={{ opacity: 0, y: 20 }}
+        animate={animate ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.3 }}
+      >
+        <h2 className="font-palanquin text-4xl capitalize font-bold lg:max-w-lg">
           We Provide You
           <span className="text-coral-red"> Super</span>
           <span className="text-coral-red"> Quality</span> Shoes
@@ -23,9 +51,14 @@ const SuperQuality = () => {
         <div className="mt-11">
           <Button label="View Details" />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flex-1 flex justify-center items-center">
+      <motion.div
+        className="flex-1 flex justify-center items-center"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={animate ? { opacity: 1, scale: 1 } : {}}
+        transition={{ delay: 0.3 }}
+      >
         <img
           src={shoe8}
           alt="shoe8"
@@ -33,7 +66,7 @@ const SuperQuality = () => {
           height={522}
           className="object-contain"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
